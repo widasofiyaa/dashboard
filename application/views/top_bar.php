@@ -15,7 +15,7 @@
                     <!-- #END# Tasks -->
                     <li>
                     <a href="<?php echo base_url() ?>index.php/clogin/logout">
-                            <button class="btn bg-blue waves-effect">LOGOUT</button>
+                            <button class="btn bg-red waves-effect">LOGOUT</button>
                           
                     </a>
                     </li>

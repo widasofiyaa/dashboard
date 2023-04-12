@@ -30,11 +30,11 @@
                                     <tr>
                                         <th>#</th>
                                         <th>ID</th>
-                                        <th>FIRST NAME</th>
-                                        <th>LAST NAME</th>
-                                        <th>USERNAME</th>
-                                        <th>PASSWORD</th>
-                                        <th>STATUS</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Username</th>
+                                        <th>Password</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>

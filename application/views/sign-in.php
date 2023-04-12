@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Login | Dashboard Data Anomali PDDIKTI</title>
+    <title>Login | Rekap Data Anomali PDDIKTI</title>
     <!-- Favicon-->
-    <link rel="icon" href="adminBSB/images/logo.png" type="image/png">
+    <link rel="icon" href="<?php echo base_url() ?>adminBSB/logo.png" type="image/png">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">

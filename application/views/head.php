@@ -65,12 +65,12 @@
     <!-- datetime -->
 </head>
 
-<body class="theme-red">
+<body class="theme-blue">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
             <div class="preloader">
-                <div class="spinner-layer pl-red">
+                <div class="spinner-layer pl-blue">
                     <div class="circle-clipper left">
                         <div class="circle"></div>
                     </div>
