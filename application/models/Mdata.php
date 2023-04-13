@@ -28,9 +28,9 @@
 			$this->db->where('id',$id);
 			$this->db->update('data_barang',$data);
 		}
-		public function update($nama,$data)
+		public function update($profile,$data)
 		{
-			$this->db->where('nama',$nama);
+			$this->db->where('profile',$profile);
 			$this->db->update('data_barang',$data);
 		}
 
@@ -81,12 +81,12 @@
 			return $this->db->get();
 		}
 
-		public function ambil_barang($nama)
+		public function ambil_barang($profile)
 		{
 			
 			$this->db->select('*');
 			$this->db->from('data_barang');
-			$this->db->where('nama',$nama);
+			$this->db->where('profile',$profile);
 			return $this->db->get();
 
 		}

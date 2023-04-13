@@ -39,7 +39,7 @@
                                             <th>Rasio Dosen</th>
                                             <th>Akreditas</th>
                                             <th>Kesesuaian Alamat PTS dengan SK</th>
-                                            <th>Pelaporan PDDIKTI (<20221) </th>
+                                            <th>Pelaporan PDDIKTI &lt;20221 </th>
                                              <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -47,35 +47,39 @@
                                      <?php 
                                          $i = 1;  
                                         foreach ($data_barang as $row) {
-                                        $tanggal = $row->tanggal;
-                                        $nama   = $row->nama;
+                                        $pendidikan_dosen_tidak_sesuai_uu = $row->pendidikan_dosen_tidak_sesuai_uu;
+                                        $jumlah_prodi_merah = $row->jumlah_prodi_merah;
+                                        $profile   = $row->profile;
                                         $ID     = $row->id;
-                                        $jumlah = $row->jumlah;
-                                        $harga_jual  = $row->harga_jual;
-                                        $harga_beli  = $row->harga_beli;
+                                        $pelaporan_pddikti = $row->pelaporan_pddikti;
+                                        $akreditas  = $row->akreditas;
+                                        $rasio_dosen  = $row->rasio_dosen;
+                                        $kesesuaian_alamat_pts_dengan_sk = $row->kesesuaian_alamat_pts_dengan_sk;
                                        
 
                                      ?> 
                                         <tr>
-                                            <td><?php echo $i++; ?></td>
-                                            <td><?php echo $tanggal; ?></td>
-                                            <td><?php echo $nama ?></td>
-                                            <td><?php echo $ID; ?></td>
-                                            <td><?php echo $harga_jual; ?></td>
-                                            <td><?php echo $harga_beli; ?></td>
-                                            <td><?php echo $jumlah; ?></td>
+                                            <td><?php echo $profile ?></td>
+                                            <td><?php echo $pendidikan_dosen_tidak_sesuai_uu; ?></td>
+                                            
+                                            <td><?php echo $jumlah_prodi_merah; ?></td>
+                                            <td><?php echo $rasio_dosen; ?></td>
+                                            <td><?php echo $akreditas; ?></td>
+                                            <td><?php echo $kesesuaian_alamat_pts_dengan_sk;?></td>
+                                            <td><?php echo $pelaporan_pddikti; ?></td>
                                      
                                              <td>
                                                 <center>
                                                     <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
                                                         <a 
                                                             href="javascript:;"
-                                                            data-id="<?php echo $ID; ?>"
-                                                            data-tanggal="<?php echo $tanggal; ?>"
-                                                            data-nama="<?php echo $nama; ?>"
-                                                            data-hb="<?php echo $harga_beli ?>"
-                                                            data-hj="<?php echo $harga_jual ?>"
-                                                            data-jumlah="<?php echo $jumlah; ?>"  
+                                                            data-jumlah_prodi_merah="<?php echo $jumlah_prodi_merah; ?>"
+                                                            data-pendidikan_dosen_tidak_sesuai_uu="<?php echo $pendidikan_dosen_tidak_sesuai_uu; ?>"
+                                                            data-profile="<?php echo $profile; ?>"
+                                                            data-rasio_dosen="<?php echo $rasio_dosen ?>"
+                                                            data-akreditas="<?php echo $akreditas ?>"
+                                                            data-kesesuaian_alamat_pts_dengan_sk="<?php echo $kesesuaian_alamat_pts_dengan_sk ?>"
+                                                            data-pelaporan_pddikti="<?php echo $pelaporan_pddikti; ?>"  
                                                             data-toggle="modal" data-target="#modal2">
                                                             <button type="button" class="btn bg-blue waves-effect">Update</button>
                                                         </a>
@@ -107,48 +111,48 @@
                             <h4 class="modal-title" id="defaultModalLabel">Input Data Kelengkapan PDDIKTI</h4>
                         </div>
                         <div class="modal-body">
-                            <form id="form_advanced_validation" method="POST" action="<?php echo base_url() ?>index.php/ckaryawan/input_karyawan">
+                            <form id="form_advanced_validation" method="POST" action="<?php echo base_url() ?>index.php/cinput_barang/input_barang">
                                 <div class="form-group form-float">
-                                <h4 class="card-inside-title">Mahasiswa Tanpa Aktivitas</h4>
+                                <h4 class="card-inside-title">Profile</h4>
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="nama" id="nama">
+                                        <input type="text" class="form-control" name="profile" id="profile">
                                       <!--   <label class="form-label">Nama Barang</label> -->
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
-                                <h4 class="card-inside-title">SKS > 24</h4>
+                                <h4 class="card-inside-title">Pendidikan Dosen TIdak Sesuai UU</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="pendidikan_dosen_tidak_sesuai_uu" id="pendidikan_dosen_tidak_sesuai_uu" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
-                                <h4 class="card-inside-title">Tanpa IPK atau No.Seri Ijazah</h4>
+                                <h4 class="card-inside-title">Jumlah Prodi Merah</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="jumlah_prodi_merah" id="jumlah_prodi_merah" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
-                                <h4 class="card-inside-title">Domisili Mahasiswa Luar Alamat Kampus</h4>
+                                <h4 class="card-inside-title">Rasio Dosen</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="rasio_dosen" id="rasio_dosen" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
-                                <h4 class="card-inside-title">Tanpa isian Nama Ibu Kandung</h4>
+                                <h4 class="card-inside-title">Akreditas</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="akreditas" id="akreditas" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
-                                <h4 class="card-inside-title">Mahasiswa Lulus kurang dari  1 Tahun</h4>
+                                <h4 class="card-inside-title">Kesesuaian Alamat PTS dengan SK</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="kesesuaian_alamat_pts_dengan_sk" id="kesesuaian_alamat_pts_dengan_sk" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
-                                <h4 class="card-inside-title">Dugaan Insert Tanpa Ajuan Tipe 1</h4>
+                                <h4 class="card-inside-title">Pelaporan PDDIKTI &lt;20221</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="pelaporan_pddikti" id="pelaporan_pddikti" class="form-control">
                                     </div>
                                 </div>
                                
@@ -181,48 +185,48 @@
                             <h4 class="modal-title" id="defaultModalLabel">Update Data Kelengkapan PDDIKTI</h4>
                         </div>
                         <div class="modal-body">
-                            <form id="form_advanced_validation" method="POST" action="<?php echo base_url() ?>index.php/ckaryawan/input_karyawan">
+                            <form id="form_advanced_validation" method="POST" action="<?php echo base_url() ?>index.php/cinput_barang/update_barang">
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Mahasiswa Tanpa Aktivitas</h4>
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="nama" id="nama">
+                                        <input type="text" class="form-control" name="profile" id="profile">
                                       <!--   <label class="form-label">Nama Barang</label> -->
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">SKS > 24</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="pendidikan_dosen_tidak_sesuai_uu" id="pendidikan_dosen_tidak_sesuai_uu" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Tanpa IPK atau No.Seri Ijazah</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="jumlah_prodi_merah" id="jumlah_prodi_merah" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Domisili Mahasiswa Luar Alamat Kampus</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="akreditas" id="akreditas" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Tanpa isian Nama Ibu Kandung</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="rasio_dosen" id="rasio_dosen" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Mahasiswa Lulus kurang dari  1 Tahun</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="kesesuaian_alamat_pts_dengan_sk" id="kesesuaian_alamat_pts_dengan_sk" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Dugaan Insert Tanpa Ajuan Tipe 1</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="pelaporan_pddikti" id="pelaporan_pddikti" class="form-control">
                                     </div>
                                 </div>
                                
@@ -257,12 +261,12 @@
                 var modal          = $(this)
 
                 // Isi nilai pada field
-                modal.find('#id').attr("value",div.data('id'));
-                modal.find('#tanggal').attr("value",div.data('tanggal'));
-                modal.find('#nama').attr("value",div.data('nama'));
-                modal.find('#hb').attr("value",div.data('hb'));
-                modal.find('#hj').attr("value",div.data('hj'));
-                modal.find('#jumlah').attr("value",div.data('jumlah'));
+                modal.find('#profile').attr("value",div.data('profile'));
+                modal.find('#pendidikan_dosen_tidak_sesuai_uu').attr("value",div.data('pendidikan_dosen_tidak_sesuai_uu'));
+                modal.find('#jumlah_prodi_merah').attr("value",div.data('jumlah_prodi_merah'));
+                modal.find('#akreditas').attr("value",div.data('akreditas'));
+                modal.find('#rasio_dosen').attr("value",div.data('rasio_dosen'));
+                modal.find('#pelaporan_pddikti').attr("value",div.data('pelaporan_pddikti'));
             });
         });
     </script>

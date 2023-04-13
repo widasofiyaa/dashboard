@@ -37,18 +37,22 @@ class cinput_barang extends CI_Controller {
 	public function input_barang(){
 
 		$id = $this->Mdata->getkodeunik();		
-		$nama = $this->input->post('nama');
-		$tanggal = $this->input->post('tanggal');
-		$jumlah = $this->input->post('jumlah');
-		$harga_beli = $this->input->post('harga_beli');
-		$harga_jual = $this->input->post('harga_jual');
+		$profile = $this->input->post('profile'); //profile
+		$pendidikan_dosen_tidak_sesuai_uu = $this->input->post('pendidikan_dosen_tidak_sesuai_uu'); //Pendidikan Dosen TIdak Sesuai UU
+		$jumlah_prodi_merah = $this->input->post('jumlah_prodi_merah'); //Jumlah Prodi Merah
+		$rasio_dosen = $this->input->post('rasio_dosen'); //Rasio Dosen
+		$akreditas = $this->input->post('akreditas');//Akreditas
+		$kesesuaian_alamat_pts_dengan_sk = $this->input->post('kesesuaian_alamat_pts_dengan_sk');
+		$pelaporan_pddikti = $this->input->post('pelaporan_pddikti');
 		$data = array(
 							'id' => $id,
-							'tanggal' => $tanggal,
-	 						'nama' => $nama,
-	 						'harga_jual' => $harga_jual,
-	 						'harga_beli' => $harga_beli,
-	 						'jumlah' => $jumlah
+	 						'profile' => $profile,
+							'pendidikan_dosen_tidak_sesuai_uu' => $pendidikan_dosen_tidak_sesuai_uu,
+							'jumlah_prodi_merah' => $jumlah_prodi_merah,
+	 						'akreditas' => $akreditas,
+	 						'rasio_dosen' => $rasio_dosen,
+							'kesesuaian_alamat_pts_dengan_sk'=>$kesesuaian_alamat_pts_dengan_sk,
+	 						'pelaporan_pddikti' => $pelaporan_pddikti
 	 			);
 	 	$this->Mdata->input_data($data);
 	 	redirect('Cdata_barang');
@@ -57,19 +61,25 @@ class cinput_barang extends CI_Controller {
 	public function update_barang(){
 
 		$id = $this->input->post('id');
-		$nama = $this->input->post('nama');
-		$jumlah = $this->input->post('jumlah');
-		$harga_beli = $this->input->post('hb');
-		$harga_jual = $this->input->post('hj');
+		$profile = $this->input->post('profile'); //profile
+		$pendidikan_dosen_tidak_sesuai_uu = $this->input->post('pendidikan_dosen_tidak_sesuai_uu'); //Pendidikan Dosen TIdak Sesuai UU
+		$jumlah_prodi_merah = $this->input->post('jumlah_prodi_merah'); //Jumlah Prodi Merah
+		$rasio_dosen = $this->input->post('rasio_dosen'); //Rasio Dosen
+		$akreditas = $this->input->post('akreditas');//Akreditas
+		$kesesuaian_alamat_pts_dengan_sk = $this->input->post('kesesuaian_alamat_pts_dengan_sk');
+		$pelaporan_pddikti = $this->input->post('pelaporan_pddikti');
 
 		$data = array(
-
-							'nama' => $nama,
-	 						'harga_jual' => $harga_jual,
-	 						'harga_beli' => $harga_beli,
-	 						'jumlah' => $jumlah
+						'profile' => $profile,
+						'pendidikan_dosen_tidak_sesuai_uu' => $pendidikan_dosen_tidak_sesuai_uu,
+						'jumlah_prodi_merah' => $jumlah_prodi_merah,
+						'akreditas' => $akreditas,
+						'rasio_dosen' => $rasio_dosen,
+						'kesesuaian_alamat_pts_dengan_sk'=>$kesesuaian_alamat_pts_dengan_sk,
+						'pelaporan_pddikti' => $pelaporan_pddikti
 				);
-		$this->Mdata->updateID($id,$data);
+		$this->Mdata->update($profile,$data);
+
 		redirect('Cdata_barang');
 	}
 }
