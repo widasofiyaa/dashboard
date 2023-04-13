@@ -46,7 +46,7 @@
                     </li>
                     <li >
                         <li class="active">
-                        <a href="<?php echo base_url() ?>index.php/ckaryawan" >
+                        <a href="<?php echo base_url() ?>index.php/cpddikti_awards" >
                             <i class="material-icons">view_list</i>
                             <span>Data PDDIKTI Awards</span>
                         </a>

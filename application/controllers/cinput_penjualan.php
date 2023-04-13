@@ -23,7 +23,7 @@ class cinput_penjualan extends CI_Controller {
 		parent::__construct();
 		$this->load->Model('Mdata');
 		$this->load->Model('Mpenjualan');
-		$this->load->Model('Mkaryawan');
+		$this->load->Model('Mpddikti_awards');
 		$this->load->library('session');
 	}
 
@@ -37,7 +37,7 @@ class cinput_penjualan extends CI_Controller {
 
 		$id 				= $this->Mpenjualan->getkodeunik();
 		$data_barang 		= $this->Mdata->ambil_barang($nama)->result();
-		$data_karyawan		= $this->Mkaryawan->ambil_id($pembeli)->result();
+		$data_pddikti_awards		= $this->Mpddikti_awards->ambil_id($pembeli)->result();
 
 		foreach ($data_barang as $row) {
 			$id_barang = $row->id;
@@ -48,7 +48,7 @@ class cinput_penjualan extends CI_Controller {
 		$total = $jumlah_penjualan * $harga_jual;
 		$a = $jumlah_penjualan * $harga_beli;
 
-		foreach ($data_karyawan as $row) {
+		foreach ($data_pddikti_awards as $row) {
 	        $nama_karyawan  = $row->nama_karyawan;
 	        $jabatan        = $row->jabatan;
 	        $status         = $row->status;
@@ -95,7 +95,7 @@ class cinput_penjualan extends CI_Controller {
 		 	$this->Mpenjualan->input_data($data);
 		 	$this->Mdata->update($nama,$data1);
 		 	if ($payment == 'Kredit') {
-		 	$this->Mkaryawan->update($pembeli,$data2);
+		 	$this->Mpddikti_awards->update($pembeli,$data2);
 		 	}
 		 	redirect('Cdata_penjualan');
 	 	}

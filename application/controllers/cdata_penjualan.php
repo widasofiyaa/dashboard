@@ -23,7 +23,7 @@ class cdata_penjualan extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->Model('Mpenjualan');
-		$this->load->Model('Mkaryawan');
+		$this->load->Model('Mpddikti_awards');
 		$this->load->Model('Mdata');
 	}
 	public function index()
@@ -31,7 +31,7 @@ class cdata_penjualan extends CI_Controller {
 		// $this->template->load('template','dashboard');
 		$data['data_penjualan'] = $this->Mpenjualan->get_all()->result();
 		$data['data_barang'] = $this->Mdata->get_all()->result();
-		$data['data_karyawan'] = $this->Mkaryawan->get_all()->result();
+		$data['data_pddikti_awards'] = $this->Mpddikti_awards->get_all()->result();
 
 		$this->load->view('head');
 		$this->load->view('top_bar');

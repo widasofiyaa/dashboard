@@ -32,32 +32,35 @@
                                     <tr>
                                     <?php 
                                          $i = 1;  
-                                            foreach ($data_karyawan as $row) {
-                                            $id             = $row->id;
-                                            $nama_karyawan  = $row->nama_karyawan;
-                                            $jabatan        = $row->jabatan;
-                                            $status         = $row->status;
+                                            foreach ($data_pddikti_awards as $row) {
+                                                
+                                            $persentase_kelas_terisi            = $row->persentase_kelas_terisi;
+                                            $persentase_data_pokok_sesuai       = $row->persentase_data_pokok_sesuai;
+                                            $persentase_pelaporan_sesuai        = $row->persentase_pelaporan_sesuai;
+                                            $persentase_checkpoint              = $row->persentase_checkpoint;
+                                            $persentase_pelaporan               = $row->persentase_pelaporan;
                                             ?> 
-                                        <td><?php echo $i++ ?></td>
-                                        <td><?php echo $id ?></td>
-                                        <td><?php echo $nama_karyawan ?></td>
-                                        <td><?php echo $jabatan ?></td>
-                                        <td><?php echo $status ?></td>
+                                        <td><?php echo $persentase_kelas_terisi ?></td>
+                                        <td><?php echo $persentase_data_pokok_sesuai ?></td>
+                                        <td><?php echo $persentase_pelaporan_sesuai  ?></td>
+                                        <td><?php echo $persentase_checkpoint ?></td>
+                                        <td><?php echo $persentase_pelaporan ?></td>
                                       
                                         <td><center>
                                                 <a 
                                                             href="javascript:;"
-                                                            data-id="<?php echo $id; ?>"
-                                                            data-nama="<?php echo $nama_karyawan; ?>"
-                                                            data-jabatan="<?php echo $jabatan; ?>"
-                                                            data-status="<?php echo $status ?>"
+                                                            data-persentase_kelas_terisi="<?php echo $persentase_kelas_terisi; ?>"
+                                                            data-persentase_data_pokok_sesuai="<?php echo $persentase_data_pokok_sesuai; ?>"
+                                                            data-persentase_pelaporan_sesuai="<?php echo $persentase_pelaporan_sesuai; ?>"
+                                                            data-persentase_checkpoint="<?php echo $persentase_checkpoint ?>"
+                                                            data-persentase_pelaporan="<?php echo $persentase_pelaporan ?>"
                                                             data-toggle="modal" data-target="#update_modal">
                                                  <button type="button" class="btn bg-blue waves-effect" data-id="">Update</button>
                                                 </a>
                                             </center>
                                         </td>
                                         <td><center>
-                                           <a href="ckaryawan/hapus/<?php echo $id; ?>" class="btn bg-pink waves-effect">Delete</a>
+                                           <a href="cpddikti_awards/hapus/<?php echo $persentase_kelas_terisi; ?>" class="btn bg-pink waves-effect">Delete</a>
                                             </center>
                                         </td>
                                     </tr>
@@ -78,11 +81,11 @@
                             <h4 class="modal-title" id="defaultModalLabel">Tambah Data PDDIKTI Awards</h4>
                         </div>
                         <div class="modal-body">
-                            <form id="form_advanced_validation" method="POST" action="<?php echo base_url() ?>index.php/ckaryawan/input_karyawan">
+                            <form id="form_advanced_validation" method="POST" action="<?php echo base_url() ?>index.php/cpddikti_awards/input_pddikti_awards">
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Persentase Kelas Terisi</h4>
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="nama" id="nama">
+                                        <input type="text" class="form-control" name="persentase_kelas_terisi" id="persentase_kelas_terisi">
                                       <!--   <label class="form-label">Nama Barang</label> -->
                                     </div>
                                    
@@ -90,25 +93,25 @@
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Persentase Data Pokok Sesuai</h4>
                                     <div class="form-line">
-                                        <input type="text" name="jbt" id="jbt" class="form-control">
+                                        <input type="text" name="persentase_data_pokok_sesuai" id="persentase_data_pokok_sesuai" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Persentase Pelaporan Sesuai</h4>
                                     <div class="form-line">
-                                        <input type="text" name="jbt" id="jbt" class="form-control">
+                                        <input type="text" name="persentase_pelaporan_sesuai" id="persentase_pelaporan_sesuai" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Persentase Checkpoint</h4>
                                     <div class="form-line">
-                                        <input type="text" name="jbt" id="jbt" class="form-control">
+                                        <input type="text" name="persentase_checkpoint" id="persentase_checkpoint" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Persentase Pelaporan</h4>
                                     <div class="form-line">
-                                        <input type="text" name="jbt" id="jbt" class="form-control">
+                                        <input type="text" name="persentase_pelaporan" id="persentase_pelaporan" class="form-control">
                                     </div>
                                 </div>
                                
@@ -140,11 +143,11 @@
                             <h4 class="modal-title" id="defaultModalLabel">Update Data PDDIKTI Awards</h4>
                         </div>
                         <div class="modal-body">
-                            <form id="form_advanced_validation" method="POST" action="<?php echo base_url() ?>index.php/ckaryawan/input_karyawan">
+                            <form id="form_advanced_validation" method="POST" action="<?php echo base_url() ?>index.php/cpddikti_awards/update_pddikti_awards">
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Persentase Kelas Terisi</h4>
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="nama" id="nama">
+                                        <input type="text" class="form-control" name="persentase_kelas_terisi" id="persentase_kelas_terisi">
                                       <!--   <label class="form-label">Nama Barang</label> -->
                                     </div>
                                    
@@ -152,28 +155,27 @@
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Persentase Data Pokok Sesuai</h4>
                                     <div class="form-line">
-                                        <input type="text" name="jbt" id="jbt" class="form-control">
+                                        <input type="text" name="persentase_data_pokok_sesuai" id="persentase_data_pokok_sesuai" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Persentase Pelaporan Sesuai</h4>
                                     <div class="form-line">
-                                        <input type="text" name="jbt" id="jbt" class="form-control">
+                                        <input type="text" name="persentase_pelaporan_sesuai" id="persentase_pelaporan_sesuai" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Persentase Checkpoint</h4>
                                     <div class="form-line">
-                                        <input type="text" name="jbt" id="jbt" class="form-control">
+                                        <input type="text" name="persentase_checkpoint" id="persentase_checkpoint" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Persentase Pelaporan</h4>
                                     <div class="form-line">
-                                        <input type="text" name="jbt" id="jbt" class="form-control">
+                                        <input type="text" name="persentase_pelaporan" id="persentase_pelaporan" class="form-control">
                                     </div>
-                                </div>
-                               
+                                </div>                               
                             <!--     <div class="form-group form-float">
                                 <h4 class="card-inside-title">Total Kredit</h4>
                                     <div class="form-line">
@@ -205,11 +207,12 @@
                 var modal          = $(this)
 
                 // Isi nilai pada field
-                modal.find('#id').attr("value",div.data('id'));
-                modal.find('#nama').attr("value",div.data('nama'));
-                modal.find('#jbt').attr("value",div.data('jabatan'));
-                modal.find('#status').attr("value",div.data('status'));
-                modal.find('#gaji').attr("value",div.data('gaji'));
+                modal.find('#persentase_kelas_terisi').attr("value",div.data('persentase_kelas_terisi'));
+                modal.find('#persentase_data_pokok_sesuai').attr("value",div.data('persentase_data_pokok_sesuai'));
+                modal.find('#persentase_pelaporan_sesuai').attr("value",div.data('persentase_pelaporan_sesuai'));
+                modal.find('#persentase_checkpoint').attr("value",div.data('persentase_checkpoint'));
+                modal.find('#persentase_pelaporan').attr("value",div.data('persentase_pelaporan'));
+
             });
         });
     </script>

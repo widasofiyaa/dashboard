@@ -23,7 +23,7 @@ class cdashboard extends CI_Controller {
 		parent::__construct();
 		$this->load->Model('Mdata');
 		$this->load->Model('Mpenjualan');
-		$this->load->Model('Mkaryawan');
+		$this->load->Model('Mpddikti_awards');
 	}
 	public function index()
 	{
@@ -34,7 +34,7 @@ class cdashboard extends CI_Controller {
 		$data['total_barang_kosong'] = $this->Mdata->total_barang_kosong();
 		$data['barang_habis'] = $this->Mdata->barang_habis()->result();
 		$data['total_untung'] = $this->Mpenjualan->jumlah_untung();
-		$data['data_karyawan'] = $this->Mkaryawan->get_all()->result();
+		$data['data_pddikti_awards'] = $this->Mpddikti_awards->get_all()->result();
 		
 		$this->load->view('head');
 		$this->load->view('top_bar');
