@@ -22,7 +22,7 @@ class cjson extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->Model('Mdata');
-		$this->load->Model('Mpenjualan');
+		$this->load->Model('Manomali');
 		$this->load->Model('Mdata_json');
 	}
 	public function index()
@@ -45,9 +45,9 @@ class cjson extends CI_Controller {
 		echo json_encode($data);
 	  }
 
-	 public function getDatapenjualan()
+	 public function getDataanomali()
 	 {
-	 	$data = $this->Mpenjualan->get_all()->result();
+	 	$data = $this->Manomali->get_all()->result();
 	 	echo json_encode($data);
 	 }
 }

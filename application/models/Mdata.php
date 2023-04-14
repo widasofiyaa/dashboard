@@ -59,6 +59,7 @@
 
 			return $this->db->get();
 		}
+		
 		function search($keyword)
     	{
 	        $this->db->like('id',$keyword);

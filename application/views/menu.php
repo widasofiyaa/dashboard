@@ -28,7 +28,7 @@
                     </li>
                     <li >
                     <li class="active">
-                        <a href="<?php echo base_url() ?>index.php/cdata_penjualan">
+                        <a href="<?php echo base_url() ?>index.php/cdata_anomali">
                             <i class="material-icons">view_list</i>
                             <span>Data Anomali</span>
                         </a>
@@ -80,7 +80,7 @@
                     </li>
                     <li >
                     <li class="active">
-                        <a href="<?php echo base_url() ?>index.php/cdata_penjualan">
+                        <a href="<?php echo base_url() ?>index.php/cdata_anomali">
                             <i class="material-icons">view_list</i>
                             <span>Data Anomali</span>
                         </a>
