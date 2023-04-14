@@ -187,44 +187,44 @@
                         <div class="modal-body">
                             <form id="form_advanced_validation" method="POST" action="<?php echo base_url() ?>index.php/cinput_barang/update_barang">
                                 <div class="form-group form-float">
-                                <h4 class="card-inside-title">Mahasiswa Tanpa Aktivitas</h4>
+                                <h4 class="card-inside-title">Profile</h4>
                                     <div class="form-line">
                                         <input type="text" class="form-control" name="profile" id="profile">
                                       <!--   <label class="form-label">Nama Barang</label> -->
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
-                                <h4 class="card-inside-title">SKS > 24</h4>
+                                <h4 class="card-inside-title">Pendidikan Dosen TIdak Sesuai UU</h4>
                                     <div class="form-line">
                                         <input type="text-number" name="pendidikan_dosen_tidak_sesuai_uu" id="pendidikan_dosen_tidak_sesuai_uu" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
-                                <h4 class="card-inside-title">Tanpa IPK atau No.Seri Ijazah</h4>
+                                <h4 class="card-inside-title">Jumlah Prodi Merah</h4>
                                     <div class="form-line">
                                         <input type="text-number" name="jumlah_prodi_merah" id="jumlah_prodi_merah" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
-                                <h4 class="card-inside-title">Domisili Mahasiswa Luar Alamat Kampus</h4>
+                                <h4 class="card-inside-title">Akreditas</h4>
                                     <div class="form-line">
                                         <input type="text-number" name="akreditas" id="akreditas" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
-                                <h4 class="card-inside-title">Tanpa isian Nama Ibu Kandung</h4>
+                                <h4 class="card-inside-title">Rasio Dosen</h4>
                                     <div class="form-line">
                                         <input type="text-number" name="rasio_dosen" id="rasio_dosen" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
-                                <h4 class="card-inside-title">Mahasiswa Lulus kurang dari  1 Tahun</h4>
+                                <h4 class="card-inside-title">Kesesuaian Alamat PTS dengan SK</h4>
                                     <div class="form-line">
                                         <input type="text-number" name="kesesuaian_alamat_pts_dengan_sk" id="kesesuaian_alamat_pts_dengan_sk" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
-                                <h4 class="card-inside-title">Dugaan Insert Tanpa Ajuan Tipe 1</h4>
+                                <h4 class="card-inside-title">Pelaporan PDDIKTI &lt;20221</h4>
                                     <div class="form-line">
                                         <input type="text-number" name="pelaporan_pddikti" id="pelaporan_pddikti" class="form-control">
                                     </div>
