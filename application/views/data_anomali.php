@@ -1,6 +1,6 @@
 
 
-    <section class="content">
+<section class="content">
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
@@ -58,41 +58,38 @@
                                     </thead>
                                 
                                     <tbody>
-                                  <?php 
-
-                                          $i = 1;  
-                                         foreach ($data_penjualan as $row) {
-
-                                         $id                = $row->id;  
-                                         $pembeli           = $row->nama_pembeli;
-                                         $payment           = $row->payment_method;
-                                         $tanggal           = $row->tanggal;
-                                         $nama_barang       = $row->nama_barang;
-                                         $jumlah            = $row->jumlah;
-                                         $harga             = $row->harga;
-                                         $total_harga       = $row->total_harga;
-                                         $untung            = $row->untung;
+                                  <?php  
+                                         foreach ($data_anomali as $row) {
+ 
+                                         $mahasiswa_tanpaaktivitas           = $row->mahasiswa_tanpaaktivitas;
+                                         $sks_lebih                          = $row->sks_lebih;
+                                         $tanpa_ipk_noijazah                 = $row->tanpa_ipk_noijazah;
+                                         $domisili_mahasiswa                 = $row->domisili_mahasiswa;
+                                         $tanpa_namaibu                      = $row->tanpa_namaibu;
+                                         $mahasiswa_lulus                    = $row->mahasiswa_lulus;
+                                         $dugaan_insert                      = $row->dugaan_insert;
 
                                      ?>
                                         <tr>
-                                            <td><?php echo $i++; ?></td>
-                                            <td><?php echo $pembeli; ?></td>
-                                            <td><?php echo $payment; ?></td>
-                                            <td><?php echo $tanggal; ?></td>
-                                            <td><?php echo $nama_barang; ?></td>
-                                            <td><?php echo $id ?></td>
-                                            <td><?php echo $harga; ?></td>
+                                            <td><?php echo $mahasiswa_tanpaaktivitas; ?></td>
+                                            <td><?php echo $sks_lebih; ?></td>
+                                            <td><?php echo $tanpa_ipk_noijazah; ?></td>
+                                            <td><?php echo $domisili_mahasiswa; ?></td>
+                                            <td><?php echo $tanpa_namaibu; ?></td>
+                                            <td><?php echo $mahasiswa_lulus; ?></td>
+                                            <td><?php echo $dugaan_insert; ?></td>
                                             <td>
                                                 <center>
                                                     <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
                                                         <a 
                                                             href="javascript:;"
-                                                            data-pembeli="<?php echo $pembeli ?>"
-                                                            data-payment="<?php echo $payment ?>"
-                                                            data-id="<?php echo $id; ?>"
-                                                            data-tanggal="<?php echo $tanggal; ?>"
-                                                            data-nama="<?php echo $nama_barang; ?>"
-                                                            data-harga="<?php echo $harga ?>"
+                                                            data-mahasiswa_tanpaaktivitas="<?php echo $mahasiswa_tanpaaktivitas ?>"
+                                                            data-sks_lebih="<?php echo $sks_lebih ?>"
+                                                            data-tanpa_ipk_noijazah="<?php echo $tanpa_ipk_noijazah; ?>"
+                                                            data-domisili_mahasiswa="<?php echo $domisili_mahasiswa; ?>"
+                                                            data-tanpa_namaibu="<?php echo $tanpa_namaibu ?>"
+                                                            data-mahasiswa_lulus="<?php echo $mahasiswa_lulus ?>"
+                                                            data-dugaan_insert="<?php echo $dugaan_insert ?>"
                                                             data-toggle="modal" data-target="#modal2">
                                                             <button type="button" data-toggle="modal" data-target="#modal3" class="btn bg-blue waves-effect">Update</button>
                                                         </a>
@@ -101,7 +98,7 @@
                                                 </center>
                                             </td>
                                             <td><center>
-                                                 <a href="cdata_penjualan/hapus/<?php echo $id; ?>" class="btn bg-pink waves-effect">Delete</a>
+                                                 <a href="cdata_anomali/hapus/<?php echo $mahasiswa_tanpaaktivitas; ?>" class="btn bg-pink waves-effect">Delete</a>
                                                 </center>
                                             </td>
                                   <?php } ?>
@@ -121,58 +118,51 @@
                             <h4 class="modal-title" id="defaultModalLabel">Input Data Anomali</h4>
                         </div>
                         <div class="modal-body">
-                            <form id="form_advanced_validation" method="POST" action="<?php echo base_url() ?>index.php/ckaryawan/input_karyawan">
+                            <form id="form_advanced_validation" method="POST" action="<?php echo base_url() ?>index.php/cinput_anomali/input_anomali">
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Mahasiswa Tanpa Aktivitas</h4>
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="nama" id="nama">
+                                        <input type="text" class="form-control" name="mahasiswa_tanpaaktivitas" id="mahasiswa_tanpaaktivitas">
                                       <!--   <label class="form-label">Nama Barang</label> -->
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">SKS > 24</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="sks_lebih" id="sks_lebih" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Tanpa IPK atau No.Seri Ijazah</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="tanpa_ipk_noijazah" id="tanpa_ipk_noijazah" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Domisili Mahasiswa Luar Alamat Kampus</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="domisili_mahasiswa" id="domisili_mahasiswa" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Tanpa isian Nama Ibu Kandung</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="tanpa_namaibu" id="tanpa_namaibu" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Mahasiswa Lulus kurang dari  1 Tahun</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="mahasiswa_lulus" id="mahasiswa_lulus" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Dugaan Insert Tanpa Ajuan Tipe 1</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="dugaan_insert" id="dugaan_insert" class="form-control">
                                     </div>
                                 </div>
                                
-                            <!--     <div class="form-group form-float">
-                                <h4 class="card-inside-title">Total Kredit</h4>
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="kredit" id="kredit" required>
-                                    </div>
-                                   
-                                </div> -->
                                
                              <div class="modal-footer">
 
@@ -194,58 +184,51 @@
                             <h4 class="modal-title" id="defaultModalLabel">Update Data Anomali</h4>
                         </div>
                         <div class="modal-body">
-                            <form id="form_advanced_validation" method="POST" action="<?php echo base_url() ?>index.php/ckaryawan/input_karyawan">
+                            <form id="form_advanced_validation" method="POST" action="<?php echo base_url() ?>index.php/cinput_anomali/update_anomali">
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Mahasiswa Tanpa Aktivitas</h4>
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="nama" id="nama">
+                                        <input type="text" class="form-control" name="mahasiswa_tanpaaktivitas" id="mahasiswa_tanpaaktivitas">
                                       <!--   <label class="form-label">Nama Barang</label> -->
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">SKS > 24</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="sks_lebih" id="sks_lebih" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Tanpa IPK atau No.Seri Ijazah</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="tanpa_ipk_noijazah" id="tanpa_ipk_noijazah" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Domisili Mahasiswa Luar Alamat Kampus</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="domisili_mahasiswa" id="domisili_mahasiswa" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Tanpa isian Nama Ibu Kandung</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="tanpa_namaibu" id="tanpa_namaibu" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Mahasiswa Lulus kurang dari  1 Tahun</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="mahasiswa_lulus" id="mahasiswa_lulus" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Dugaan Insert Tanpa Ajuan Tipe 1</h4>
                                     <div class="form-line">
-                                        <input type="text-number" name="jbt" id="jbt" class="form-control">
+                                        <input type="text-number" name="dugaan_insert" id="dugaan_insert" class="form-control">
                                     </div>
                                 </div>
                                
-                            <!--     <div class="form-group form-float">
-                                <h4 class="card-inside-title">Total Kredit</h4>
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="kredit" id="kredit" required>
-                                    </div>
-                                   
-                                </div> -->
                                
                              <div class="modal-footer">
 
@@ -272,13 +255,13 @@
                 var modal          = $(this)
 
                 // Isi nilai pada field
-                modal.find('#id').attr("value",div.data('id'));
-                modal.find('#tanggal').attr("value",div.data('tanggal'));
-                modal.find('#nama').attr("value",div.data('nama'));
-                modal.find('#harga').attr("value",div.data('harga'));
-                modal.find('#jumlah').attr("value",div.data('jumlah'));
-                modal.find('#pembeli').attr("value",div.data('pembeli2'));
-                modal.find('#payment').attr("value",div.data('payment2'));
+                modal.find('#mahasiswa_tanpaaktivitas').attr("value",div.data('mahasiswa_tanpaaktivitas'));
+                modal.find('#sks_lebih').attr("value",div.data('sks_lebih'));
+                modal.find('#tanpa_ipk_noijazah').attr("value",div.data('tanpa_ipk_noijazah'));
+                modal.find('#domisili_mahasiswa').attr("value",div.data('domisili_mahasiswa'));
+                modal.find('#tanpa_namaibu').attr("value",div.data('tanpa_namaibu'));
+                modal.find('#mahasiswa_lulus').attr("value",div.data('mahasiswa_lulus'));
+                modal.find('#dugaan_insert').attr("value",div.data('dugaan_insert'));
             });
         });
     </script>

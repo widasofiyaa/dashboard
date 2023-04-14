@@ -34,7 +34,7 @@
         var strJson = "";
         $.ajax({
             
-            url: "http://localhost:8080/ci_adminbsb/index.php/cjson/getdatapenjualan",
+            url: "http://localhost:8080/ci_adminbsb/index.php/cjson/getdataanomali",
             dataType: "text",
             success: function (data){
 
