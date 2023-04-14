@@ -69,7 +69,7 @@ class cinput_barang extends CI_Controller {
 		$kesesuaian_alamat_pts_dengan_sk = $this->input->post('kesesuaian_alamat_pts_dengan_sk');
 		$pelaporan_pddikti = $this->input->post('pelaporan_pddikti');
 
-		$data = array(
+		$data = array(	//'id' => $id,
 						'profile' => $profile,
 						'pendidikan_dosen_tidak_sesuai_uu' => $pendidikan_dosen_tidak_sesuai_uu,
 						'jumlah_prodi_merah' => $jumlah_prodi_merah,
@@ -78,7 +78,7 @@ class cinput_barang extends CI_Controller {
 						'kesesuaian_alamat_pts_dengan_sk'=>$kesesuaian_alamat_pts_dengan_sk,
 						'pelaporan_pddikti' => $pelaporan_pddikti
 				);
-		$this->Mdata->update($profile,$data);
+		$this->Mdata->update($id,$data);
 
 		redirect('Cdata_barang');
 	}
