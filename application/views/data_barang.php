@@ -61,7 +61,6 @@
                                         <tr>
                                             <td><?php echo $profile ?></td>
                                             <td><?php echo $pendidikan_dosen_tidak_sesuai_uu; ?></td>
-                                            
                                             <td><?php echo $jumlah_prodi_merah; ?></td>
                                             <td><?php echo $rasio_dosen; ?></td>
                                             <td><?php echo $akreditas; ?></td>
@@ -194,7 +193,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
-                                <h4 class="card-inside-title">Pendidikan Dosen TIdak Sesuai UU</h4>
+                                <h4 class="card-inside-title">Pendidikan Dosen Tidak Sesuai UU</h4>
                                     <div class="form-line">
                                         <input type="text-number" name="pendidikan_dosen_tidak_sesuai_uu" id="pendidikan_dosen_tidak_sesuai_uu" class="form-control">
                                     </div>
@@ -265,6 +264,7 @@
                 modal.find('#pendidikan_dosen_tidak_sesuai_uu').attr("value",div.data('pendidikan_dosen_tidak_sesuai_uu'));
                 modal.find('#jumlah_prodi_merah').attr("value",div.data('jumlah_prodi_merah'));
                 modal.find('#akreditas').attr("value",div.data('akreditas'));
+                modal.find('#kesesuaian_alamat_pts_dengan_sk').attr("value",div.data('kesesuaian_alamat_pts_dengan_sk'));
                 modal.find('#rasio_dosen').attr("value",div.data('rasio_dosen'));
                 modal.find('#pelaporan_pddikti').attr("value",div.data('pelaporan_pddikti'));
             });

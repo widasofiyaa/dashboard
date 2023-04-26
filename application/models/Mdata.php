@@ -28,9 +28,9 @@
 			$this->db->where('id',$id);
 			$this->db->update('data_barang',$data);
 		}
-		public function update($id,$data)
+		public function update($profile,$data)
 		{
-			$this->db->where('id',$id);
+			$this->db->where('profile',$profile);
 			$this->db->update('data_barang',$data);
 		}
 
