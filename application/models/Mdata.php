@@ -92,12 +92,20 @@
 
 		}
 
-		public function total_barang()
+		public function data_anomali_()
 		{
-			
-			$this->db->from('data_barang');
-			
-			return $this->db->count_all_results();
+			$this->db->select('*');
+			$this->db->from('data_anomali');
+
+			return $this->db->get();
+		}
+
+		public function total_anomali($mahasiswa_tanpaaktivitas)
+		{
+			$this->db->select('*');
+			$this->db->from('data_anomali');
+			$this->db->where('mahasiswa_tanpaaktivitas',$mahasiswa_tanpaaktivitas);
+			return $this->db->get();
 		}
 
 		public function total_barang_kosong()

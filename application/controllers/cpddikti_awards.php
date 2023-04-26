@@ -22,7 +22,6 @@ class cpddikti_awards extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->Model('Mdata');
-		$this->load->Model('Mpenjualan');
 		$this->load->Model('Mpddikti_awards');
 	}
 	public function index()

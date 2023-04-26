@@ -21,7 +21,6 @@ class cdashboard extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->Model('Mdata');
 		$this->load->Model('Manomali');
 		$this->load->Model('Mpddikti_awards');
 	}
@@ -29,12 +28,9 @@ class cdashboard extends CI_Controller {
 	{
 		$sess = $this->session->userdata('status');
 		if (isset($sess)) {
-		$data['total_barang'] = $this->Mdata->total_barang();
-		$data['total_barang_kosong'] = $this->Mdata->total_barang_kosong();
-		$data['barang_habis'] = $this->Mdata->barang_habis()->result();
-		$data['data_pddikti_awards'] = $this->Mpddikti_awards->get_all()->result();
-		$data['data_anomali'] = $this->Manomali->get_all()->result();
-		
+			$data['total_dataanomali'] = $this->Manomali->total_dataanomali();
+			$data['total_data_pddikti_awards'] = $this->Mpddikti_awards->total_data_pddikti_awards();
+
 		$this->load->view('head');
 		$this->load->view('top_bar');
 		$this->load->view('menu');

@@ -13,19 +13,19 @@
                         </div>
                         <div class="content">
                             <div class="text">Total Data Anomali</div>
-                            <div class="number count-to" data-from="0" data-to="<?php echo $total_penjualan; ?>" data-speed="15" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $total_dataanomali; ?>" data-speed="15" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"> 
                     <div class="info-box bg-cyan hover-expand-effect">
                         <div class="icon">
                             <i class="material-icons">list</i>
                         </div>
                         <div class="content">
                             <div class="text">Total Data Kelengkapan PDDIKTI</div>
-                            <div class="number count-to" data-from="0" data-to="<?php echo $total_barang_kosong; ?>" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $total_barang; ?>" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                         </div>
                         <div class="content">
                             <div class="text">Total Data PDDIKTI Awards</div>
-                            <div class="number count-to" data-from="0" data-to="<?php echo $total_barang; ?>" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $total_data_pddikti_awards; ?>" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>

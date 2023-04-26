@@ -23,27 +23,25 @@
 			return $this->db->get();
 		}
 
-		public function update($mahasiswa_tanpaaktivitas_data,$data)
+		public function update($mahasiswa_tanpaaktivitas,$data)
 		{
-			$this->db->where('mahasiswa_tanpaaktivitas',$mahasiswa_tanpaaktivitas_data);
+			$this->db->where('mahasiswa_tanpaaktivitas',$mahasiswa_tanpaaktivitas);
 			$this->db->update('data_anomali',$data);
 		}
 
-		public function delete($mahasiswa_tanpaaktivitas_data)
+		public function delete($mahasiswa_tanpaaktivitas)
 		{
-			$this->db->where('mahasiswa_tanpaaktivitas',$mahasiswa_tanpaaktivitas_data);
+			$this->db->where('mahasiswa_tanpaaktivitas',$mahasiswa_tanpaaktivitas);
 			$this->db->delete('data_anomali');
 
 			return TRUE;
 		}
 
-		public function select_tanggal($tanggal)
+		public function total_dataanomali()
 		{
-			$this->db->select('*');
 			$this->db->from('data_anomali');
-			$this->db->where('tanggal',$tanggal);
-
-			return $this->db->get();
+			
+			return $this->db->count_all_results();
 		}
 
 		public function select_kopi($mahasiswa_tanpaaktivitas)

@@ -30,7 +30,7 @@ class cdata_anomali extends CI_Controller {
 	{
 		// $this->template->load('template','dashboard');
 		$data['data_anomali'] = $this->Manomali->get_all()->result();
-		$data['data_pddikti_awards'] = $this->Mpddikti_awards->get_all()->result();
+		///$data['data_pddikti_awards'] = $this->Mpddikti_awards->get_all()->result();
 
 		$this->load->view('head');
 		$this->load->view('top_bar');

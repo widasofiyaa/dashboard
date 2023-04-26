@@ -76,7 +76,7 @@
 			return $this->db->get();
 		}
 
-		public function total_penjualan()
+		public function total_data_pddikti_awards()
 		{
 			$this->db->from('data_pddikti_awards');
 			
