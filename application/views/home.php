@@ -25,7 +25,7 @@
                         </div>
                         <div class="content">
                             <div class="text">Total Data Kelengkapan PDDIKTI</div>
-                            <div class="number count-to" data-from="0" data-to="<?php echo $total_barang; ?>" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $total_data_kelengkapan_pddikti; ?>" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>

@@ -41,24 +41,6 @@
 
 			return TRUE;
 		}
-
-		public function select_tanggal($tanggal)
-		{
-			$this->db->select('*');
-			$this->db->from('data_kelengkapan_pddikti');
-			$this->db->where('tanggal',$tanggal);
-
-			return $this->db->get();
-		}
-
-		public function select_kopi($id)
-		{
-			$this->db->select('*');
-			$this->db->from('data_kelengkapan_pddikti');
-			$this->db->where('kd_karung',$id);
-
-			return $this->db->get();
-		}
 		
 		function search($keyword)
     	{
@@ -70,29 +52,11 @@
     	public function viewByid($id){    
 
     	  	$this->db->where('id', $id);    
-    	  	$result = $this->db->get('data_kelengkapan_pddikti')->row(); // Tampilkan data siswa berdasarkan NIS        return $result;   }
+    	  	$result = $this->db->get('data_kelengkapan_pddikti')->row();
     	}
 
-    	public function barang_habis()
-		{
-			$this->db->select('*');
-			$this->db->from('data_kelengkapan_pddikti');
-			$this->db->where('jumlah','0');
 
-			return $this->db->get();
-		}
-
-		public function ambil_barang($profile)
-		{
-			
-			$this->db->select('*');
-			$this->db->from('data_kelengkapan_pddikti');
-			$this->db->where('profile',$profile);
-			return $this->db->get();
-
-		}
-
-		public function total_barang()
+		public function total_data_kelengkapan_pddikti()
 		{
 			
 			$this->db->from('data_kelengkapan_pddikti');
@@ -115,17 +79,6 @@
 			$this->db->where('mahasiswa_tanpaaktivitas',$mahasiswa_tanpaaktivitas);
 			return $this->db->get();
 		}
-
-		public function total_barang_kosong()
-		{
-			
-			$this->db->from('data_kelengkapan_pddikti');
-			$this->db->where('jumlah','0');
-			
-			return $this->db->count_all_results();
-		}
-
-
 
 		function getkodeunik() { 
 
