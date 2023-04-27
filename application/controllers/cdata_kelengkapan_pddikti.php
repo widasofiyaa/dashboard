@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class cdata_barang extends CI_Controller {
+class cdata_kelengkapan_pddikti extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -27,11 +27,11 @@ class cdata_barang extends CI_Controller {
 	public function index()
 	{
 		// $this->template->load('template','dashboard');
-		$data['data_barang'] = $this->Mdata->get_all()->result();
+		$data['data_kelengkapan_pddikti'] = $this->Mdata->get_all()->result();
 		$this->load->view('head');
 		$this->load->view('top_bar');
 		$this->load->view('menu');
-		$this->load->view('data_barang',$data);
+		$this->load->view('data_kelengkapan_pddikti',$data);
 		// $this->load->view('foot');
 		// $this->load->view('coba');
 
@@ -40,7 +40,7 @@ class cdata_barang extends CI_Controller {
 	public function hapus($id)
 	{
 		$this->Mdata->delete($id);
-		redirect('cdata_barang');
+		redirect('cdata_kelengkapan_pddikti');
 	}
 
 	public function try_json(){

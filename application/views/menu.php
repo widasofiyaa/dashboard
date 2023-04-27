@@ -37,7 +37,7 @@
               
                     <li >
                         <li class="active">
-                        <a href="<?php echo base_url() ?>index.php/cdata_barang" >
+                        <a href="<?php echo base_url() ?>index.php/cdata_kelengkapan_pddikti" >
                             <i class="material-icons">view_list</i>
                             <span>Data Kelengkapan PDDIKTI</span>
                         </a>

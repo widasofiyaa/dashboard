@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class cinput_barang extends CI_Controller {
+class cinput_data_kelengkapan_pddikti extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -25,7 +25,7 @@ class cinput_barang extends CI_Controller {
 	}
 	public function index()
 	{
-		$data['data_barang'] = $this->Mdata->get_all()->result();
+		$data['data_kelengkapan_pddikti'] = $this->Mdata->get_all()->result();
 		$this->load->view('head');
 		$this->load->view('top_bar');
 		$this->load->view('menu');
@@ -34,7 +34,7 @@ class cinput_barang extends CI_Controller {
 		// $this->load->view('coba');
 
 	}
-	public function input_barang(){
+	public function input_data_kelengkapan_pddikti(){
 
 		$id = $this->Mdata->getkodeunik();		
 		$profile = $this->input->post('profile'); //profile
@@ -55,10 +55,10 @@ class cinput_barang extends CI_Controller {
 	 						'pelaporan_pddikti' => $pelaporan_pddikti
 	 			);
 	 	$this->Mdata->input_data($data);
-	 	redirect('Cdata_barang');
+	 	redirect('Cdata_kelengkapan_pddikti');
 
 	}
-	public function update_barang(){
+	public function update_data_kelengkapan_pddikti(){
 
 		$id = $this->input->post('id');
 		$profile = $this->input->post('profile'); //profile
@@ -80,6 +80,6 @@ class cinput_barang extends CI_Controller {
 				);
 		$this->Mdata->update($profile,$data);
 
-		redirect('Cdata_barang');
+		redirect('Cdata_kelengkapan_pddikti');
 	}
 }

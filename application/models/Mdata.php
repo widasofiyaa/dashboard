@@ -12,13 +12,13 @@
 
 		public function input_data($data)
 		{
-			$this->db->insert('data_barang',$data);
+			$this->db->insert('data_kelengkapan_pddikti',$data);
 		}
 
 		public function get_all()
 		{
 			$this->db->select('*');
-			$this->db->from('data_barang');
+			$this->db->from('data_kelengkapan_pddikti');
 
 			return $this->db->get();
 		}
@@ -26,18 +26,18 @@
 		public function updateID($id,$data)
 		{
 			$this->db->where('id',$id);
-			$this->db->update('data_barang',$data);
+			$this->db->update('data_kelengkapan_pddikti',$data);
 		}
 		public function update($profile,$data)
 		{
 			$this->db->where('profile',$profile);
-			$this->db->update('data_barang',$data);
+			$this->db->update('data_kelengkapan_pddikti',$data);
 		}
 
 		public function delete($id_data)
 		{
 			$this->db->where('id',$id_data);
-			$this->db->delete('data_barang');
+			$this->db->delete('data_kelengkapan_pddikti');
 
 			return TRUE;
 		}
@@ -45,7 +45,7 @@
 		public function select_tanggal($tanggal)
 		{
 			$this->db->select('*');
-			$this->db->from('data_barang');
+			$this->db->from('data_kelengkapan_pddikti');
 			$this->db->where('tanggal',$tanggal);
 
 			return $this->db->get();
@@ -54,7 +54,7 @@
 		public function select_kopi($id)
 		{
 			$this->db->select('*');
-			$this->db->from('data_barang');
+			$this->db->from('data_kelengkapan_pddikti');
 			$this->db->where('kd_karung',$id);
 
 			return $this->db->get();
@@ -63,20 +63,20 @@
 		function search($keyword)
     	{
 	        $this->db->like('id',$keyword);
-	        $query  =  $this->db->get('data_barang');
+	        $query  =  $this->db->get('data_kelengkapan_pddikti');
 	        return $query->result();
     	}
 
     	public function viewByid($id){    
 
     	  	$this->db->where('id', $id);    
-    	  	$result = $this->db->get('data_barang')->row(); // Tampilkan data siswa berdasarkan NIS        return $result;   }
+    	  	$result = $this->db->get('data_kelengkapan_pddikti')->row(); // Tampilkan data siswa berdasarkan NIS        return $result;   }
     	}
 
     	public function barang_habis()
 		{
 			$this->db->select('*');
-			$this->db->from('data_barang');
+			$this->db->from('data_kelengkapan_pddikti');
 			$this->db->where('jumlah','0');
 
 			return $this->db->get();
@@ -86,7 +86,7 @@
 		{
 			
 			$this->db->select('*');
-			$this->db->from('data_barang');
+			$this->db->from('data_kelengkapan_pddikti');
 			$this->db->where('profile',$profile);
 			return $this->db->get();
 
@@ -95,7 +95,7 @@
 		public function total_barang()
 		{
 			
-			$this->db->from('data_barang');
+			$this->db->from('data_kelengkapan_pddikti');
 			
 			return $this->db->count_all_results();
 		}
@@ -119,7 +119,7 @@
 		public function total_barang_kosong()
 		{
 			
-			$this->db->from('data_barang');
+			$this->db->from('data_kelengkapan_pddikti');
 			$this->db->where('jumlah','0');
 			
 			return $this->db->count_all_results();
@@ -129,7 +129,7 @@
 
 		function getkodeunik() { 
 
-			$table = 'data_barang';
+			$table = 'data_kelengkapan_pddikti';
 	        $q = $this->db->query("SELECT MAX(RIGHT(id,4)) AS idmax FROM ".$table);
 	        $kd = ""; //kode awal
 	        if($q->num_rows()>0){ //jika data ada

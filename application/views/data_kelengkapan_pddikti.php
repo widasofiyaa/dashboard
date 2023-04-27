@@ -46,7 +46,7 @@
                                      <tbody>
                                      <?php 
                                          $i = 1;  
-                                        foreach ($data_barang as $row) {
+                                        foreach ($data_kelengkapan_pddikti as $row) {
                                         $pendidikan_dosen_tidak_sesuai_uu = $row->pendidikan_dosen_tidak_sesuai_uu;
                                         $jumlah_prodi_merah = $row->jumlah_prodi_merah;
                                         $profile   = $row->profile;
@@ -87,7 +87,7 @@
                                             </td>
                                             <td>       
                                             <center> 
-                                                <a href="cdata_barang/hapus/<?php echo $ID; ?>" class="btn bg-pink waves-effect">Delete</a>
+                                                <a href="cdata_kelengkapan_pddikti/hapus/<?php echo $ID; ?>" class="btn bg-pink waves-effect">Delete</a>
                                              </center> 
                                             </td>
 
@@ -110,7 +110,7 @@
                             <h4 class="modal-title" id="defaultModalLabel">Input Data Kelengkapan PDDIKTI</h4>
                         </div>
                         <div class="modal-body">
-                            <form id="form_advanced_validation" method="POST" action="<?php echo base_url() ?>index.php/cinput_barang/input_barang">
+                            <form id="form_advanced_validation" method="POST" action="<?php echo base_url() ?>index.php/cinput_data_kelengkapan_pddikti/input_data_kelengkapan_pddikti">
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Profile</h4>
                                     <div class="form-line">
@@ -184,7 +184,7 @@
                             <h4 class="modal-title" id="defaultModalLabel">Update Data Kelengkapan PDDIKTI</h4>
                         </div>
                         <div class="modal-body">
-                            <form id="form_advanced_validation" method="POST" action="<?php echo base_url() ?>index.php/cinput_barang/update_barang">
+                            <form id="form_advanced_validation" method="POST" action="<?php echo base_url() ?>index.php/cinput_data_kelengkapan_pddikti/update_data_kelengkapan_pddikti">
                                 <div class="form-group form-float">
                                 <h4 class="card-inside-title">Profile</h4>
                                     <div class="form-line">
