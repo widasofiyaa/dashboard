@@ -2,7 +2,7 @@
 	/**
 	* 
 	*/
-	class Mdata extends CI_Model
+	class Mdata_kelengkapan_pddikti extends CI_Model
 	{
 		
 		function __construct()

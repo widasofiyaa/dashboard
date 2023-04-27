@@ -22,12 +22,12 @@ class cdata_kelengkapan_pddikti extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->Model('Mdata');
+		$this->load->Model('Mdata_kelengkapan_pddikti');
 	}
 	public function index()
 	{
 		// $this->template->load('template','dashboard');
-		$data['data_kelengkapan_pddikti'] = $this->Mdata->get_all()->result();
+		$data['data_kelengkapan_pddikti'] = $this->Mdata_kelengkapan_pddikti->get_all()->result();
 		$this->load->view('head');
 		$this->load->view('top_bar');
 		$this->load->view('menu');
@@ -39,13 +39,13 @@ class cdata_kelengkapan_pddikti extends CI_Controller {
 
 	public function hapus($id)
 	{
-		$this->Mdata->delete($id);
+		$this->Mdata_kelengkapan_pddikti->delete($id);
 		redirect('cdata_kelengkapan_pddikti');
 	}
 
 	public function try_json(){
 
-		$data = $this->Mdata->get_all()->result();
+		$data = $this->Mdata_kelengkapan_pddikti->get_all()->result();
 		echo json_encode($data);
 		
 	}
