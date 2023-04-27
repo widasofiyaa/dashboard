@@ -92,6 +92,14 @@
 
 		}
 
+		public function total_barang()
+		{
+			
+			$this->db->from('data_barang');
+			
+			return $this->db->count_all_results();
+		}
+
 		public function data_anomali_()
 		{
 			$this->db->select('*');
