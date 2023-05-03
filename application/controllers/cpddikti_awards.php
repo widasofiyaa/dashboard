@@ -21,7 +21,7 @@ class cpddikti_awards extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->Model('Mdata');
+		$this->load->Model('Mdata_kelengkapan_pddikti');
 		$this->load->Model('Mpddikti_awards');
 	}
 	public function index()
@@ -29,7 +29,7 @@ class cpddikti_awards extends CI_Controller {
 		// $sess = $this->session->userdata('status');
 		// if (isset($sess)) {
 		$data['data_pddikti_awards'] = $this->Mpddikti_awards->get_all()->result();
-		// $data['data_barang_kosong'] = $this->Mdata->
+		// $data['data_barang_kosong'] = $this->Mdata_kelengkapan_pddikti->
 		$this->load->view('head');
 		$this->load->view('top_bar');
 		$this->load->view('menu');

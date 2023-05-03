@@ -116,7 +116,7 @@
                                          <select class="form-control show-tick" data-show-subtext="true" id="status" name="status">
 
                                             <option value="Admin">Admin</option>
-                                            <option value="Penjualan">Penjualan</option>
+                                           
                                             
                                             </select>
                                     </div>

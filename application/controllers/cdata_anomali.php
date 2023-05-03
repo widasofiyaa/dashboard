@@ -24,7 +24,7 @@ class cdata_anomali extends CI_Controller {
 		parent::__construct();
 		$this->load->Model('Manomali');
 		$this->load->Model('Mpddikti_awards');
-		$this->load->Model('Mdata');
+		$this->load->Model('Mdata_kelengkapan_pddikti');
 	}
 	public function index()
 	{
