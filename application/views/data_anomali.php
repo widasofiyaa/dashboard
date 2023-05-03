@@ -45,6 +45,7 @@
                                 <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                                     <thead>
                                         <tr>
+                                            <th>Nama PTS Baru</th>
                                             <th>Mahasiswa Tanpa Aktivitas</th>
                                             <th>SKS > 24</th>
                                             <th>Tanpa IPK atau No.Seri Ijazah</th>
@@ -60,7 +61,8 @@
                                     <tbody>
                                   <?php  
                                          foreach ($data_anomali as $row) {
- 
+                                        
+                                         $nama_pts                           = $row->nama_pts;
                                          $mahasiswa_tanpaaktivitas           = $row->mahasiswa_tanpaaktivitas;
                                          $sks_lebih                          = $row->sks_lebih;
                                          $tanpa_ipk_noijazah                 = $row->tanpa_ipk_noijazah;
@@ -71,6 +73,7 @@
 
                                      ?>
                                         <tr>
+                                            <td><?php echo $nama_pts; ?></td>
                                             <td><?php echo $mahasiswa_tanpaaktivitas; ?></td>
                                             <td><?php echo $sks_lebih; ?></td>
                                             <td><?php echo $tanpa_ipk_noijazah; ?></td>
@@ -83,6 +86,7 @@
                                                     <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
                                                         <a 
                                                             href="javascript:;"
+                                                            data-nama_pts="<?php echo $nama_pts ?>"
                                                             data-mahasiswa_tanpaaktivitas="<?php echo $mahasiswa_tanpaaktivitas ?>"
                                                             data-sks_lebih="<?php echo $sks_lebih ?>"
                                                             data-tanpa_ipk_noijazah="<?php echo $tanpa_ipk_noijazah; ?>"
@@ -119,11 +123,16 @@
                         </div>
                         <div class="modal-body">
                             <form id="form_advanced_validation" method="POST" action="<?php echo base_url() ?>index.php/cinput_anomali/input_anomali">
-                                <div class="form-group form-float">
+                            <div class="form-group form-float">
+                                <h4 class="card-inside-title">Nama PTS Baru</h4>
+                                    <div class="form-line">
+                                        <input type="text-number" name="nama_pts" id="nama_pts" class="form-control">
+                                    </div>
+                                </div>    
+                            <div class="form-group form-float">
                                 <h4 class="card-inside-title">Mahasiswa Tanpa Aktivitas</h4>
                                     <div class="form-line">
                                         <input type="text" class="form-control" name="mahasiswa_tanpaaktivitas" id="mahasiswa_tanpaaktivitas">
-                                      <!--   <label class="form-label">Nama Barang</label> -->
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
@@ -185,11 +194,16 @@
                         </div>
                         <div class="modal-body">
                             <form id="form_advanced_validation" method="POST" action="<?php echo base_url() ?>index.php/cinput_anomali/update_anomali">
-                                <div class="form-group form-float">
+                            <div class="form-group form-float">
+                                <h4 class="card-inside-title">Nama PTS Baru</h4>
+                                    <div class="form-line">
+                                        <input type="text-number" name="nama_pts" id="nama_pts" class="form-control">
+                                    </div>
+                                </div>      
+                            <div class="form-group form-float">
                                 <h4 class="card-inside-title">Mahasiswa Tanpa Aktivitas</h4>
                                     <div class="form-line">
                                         <input type="text" class="form-control" name="mahasiswa_tanpaaktivitas" id="mahasiswa_tanpaaktivitas">
-                                      <!--   <label class="form-label">Nama Barang</label> -->
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
@@ -255,6 +269,7 @@
                 var modal          = $(this)
 
                 // Isi nilai pada field
+                modal.find('#nama_pts').attr("value",div.data('nama_pts'));
                 modal.find('#mahasiswa_tanpaaktivitas').attr("value",div.data('mahasiswa_tanpaaktivitas'));
                 modal.find('#sks_lebih').attr("value",div.data('sks_lebih'));
                 modal.find('#tanpa_ipk_noijazah').attr("value",div.data('tanpa_ipk_noijazah'));

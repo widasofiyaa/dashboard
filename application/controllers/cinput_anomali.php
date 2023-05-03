@@ -36,6 +36,7 @@ class cinput_anomali extends CI_Controller {
 	}
 	public function input_anomali(){
 	
+		$nama_pts = $this->input->post('nama_pts'); 
 		$mahasiswa_tanpaaktivitas = $this->input->post('mahasiswa_tanpaaktivitas'); 
 		$sks_lebih = $this->input->post('sks_lebih'); 
 		$tanpa_ipk_noijazah= $this->input->post('tanpa_ipk_noijazah'); 
@@ -44,6 +45,7 @@ class cinput_anomali extends CI_Controller {
 		$mahasiswa_lulus = $this->input->post('mahasiswa_lulus');
 		$dugaan_insert = $this->input->post('dugaan_insert');
 		$data = array(
+							'nama_pts' => $nama_pts,
 	 						'mahasiswa_tanpaaktivitas' => $mahasiswa_tanpaaktivitas,
 							'sks_lebih' => $sks_lebih,
 							'tanpa_ipk_noijazah' => $tanpa_ipk_noijazah,
@@ -58,6 +60,7 @@ class cinput_anomali extends CI_Controller {
 	}
 	public function update_anomali(){
 
+		$nama_pts = $this->input->post('nama_pts'); 
 		$mahasiswa_tanpaaktivitas = $this->input->post('mahasiswa_tanpaaktivitas'); 
 		$sks_lebih = $this->input->post('sks_lebih'); 
 		$tanpa_ipk_noijazah= $this->input->post('tanpa_ipk_noijazah'); 
@@ -67,6 +70,8 @@ class cinput_anomali extends CI_Controller {
 		$dugaan_insert = $this->input->post('dugaan_insert');
 
 		$data = array(
+				
+						'nama_pts' => $nama_pts,
 						'mahasiswa_tanpaaktivitas' => $mahasiswa_tanpaaktivitas,
 						'sks_lebih' => $sks_lebih,
 						'tanpa_ipk_noijazah' => $tanpa_ipk_noijazah,
