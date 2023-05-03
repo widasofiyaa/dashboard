@@ -25,17 +25,13 @@ class cuser extends CI_Controller {
 	}
 	public function index()
 	{
-		// $this->template->load('template','dashboard');
-	
-		// $data['data_barang_kosong'] = $this->Mdata->
 		$data['data_user'] = $this->Muser->get_all()->result();
 		$this->load->view('head');
 		$this->load->view('top_bar');
 		$this->load->view('menu');
 		$this->load->view('data_user',$data);
 		$this->load->view('foot');
-		// $this->load->view('coba');
-
+		
 	}
 	public function input_user(){
 		
